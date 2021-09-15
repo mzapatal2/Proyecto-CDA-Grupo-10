@@ -13,6 +13,6 @@ Repositorio para el curso Análisis de Big Data
 ## Ambiente de desarrollo
 
 
-## Proyectos
+## Proyecto
 
 
