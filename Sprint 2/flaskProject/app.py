@@ -14,7 +14,7 @@ def index():  # put application's code here
 
 @app.route('/test')
 def hello_world1():  # put application's code here
-    return 'project'
+    return 'projectyyyyyyy'
 
 
 if __name__ == '__main__':
