@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import render_template
 from flask_cors import CORS
+from flask import request
 
 app = Flask(__name__)
 CORS(app)
@@ -14,12 +15,18 @@ def index():  # put application's code here
 
 @app.route('/CalcularModelo1', methods = ['POST', 'GET'])
 def CalcularModelo1():  # put application's code here
-    tipoRequest = request.method
-    nombre = 'Mateo'
-    value = request.args.get('idParMetodo1')
-    result = request.form
-    return render_template('index.html', nombre=value)
+    result = request.args.get('idParMetodo1')
+    output = -44.82744494620209 + 0.06294512*float(result)
+    return render_template('index.html', resultado=output)
 
+@app.route('/CalcularModelo2', methods = ['POST', 'GET'])
+def CalcularModelo2():  # put application's code here
+    precio = request.args.get('idPar1Metodo2')
+    reviews = request.args.get('idPar2Metodo2')
+    lecturas = request.args.get('idPar3Metodo2')
+
+    output = 4494.53931986 + -1051.67149944*float(precio) +  132.97236443*float(reviews) + 24.39892038*float(lecturas)
+    return render_template('index.html', resultado2=output)
 
 if __name__ == '__main__':
     app.run(debug=True)

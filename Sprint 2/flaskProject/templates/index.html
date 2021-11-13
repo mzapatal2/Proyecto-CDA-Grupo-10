@@ -9,32 +9,29 @@
     <br />
     <hr>
     <p align="left">Modelo 1: Predicción numero de reviews a partir de número de suscriptores</p>
-    <label>Ingrese valor para el número de suscriptores:</label>
-    <input type="number" min="0" name="idParMetodo1" oninput="validity.valid||(value='');"/>
-    <button type="button" onclick="window.location.href='{{ url_for( 'CalcularModelo1') }}';">Calcular</button>
 
-    <br />
-    <br />
-    <label>Valor de la predicción:</label>
-    <input type="text" id="ResultadoModelo1" readonly value={{ nombre }}>
+    <form action = "http://localhost:5000/CalcularModelo1" method = "GET">
+       <p>Ingrese valor para el número de suscriptores:  <input type="number" min="0" name="idParMetodo1" oninput="validity.valid||(value='');"/></p>
+       <p><input type = "submit" value = "Calcular" /></p>
+    </form>
+
+    <label>Valor de la predicción de la cantidad de reviews:</label>
+    <input type="text" id="ResultadoModelo1" readonly value={{ resultado }}>
     <hr>
+
+
     <p align="left">Modelo 2: Predicción número de suscriptores a partir de las siguientes variables</p>
-    <label>Ingrese valor del precio:</label>
-    <input type="number" min="0" name="idPar1Metodo2" oninput="validity.valid||(value='');"/>
+    <form action = "http://localhost:5000/CalcularModelo2" method = "GET">
+        <p>Ingrese valor del precio:  <input type="number" min="0" name="idPar1Metodo2" oninput="validity.valid||(value='');"/></p>
+        <br />
+        <p>Ingrese valor para la duracion del contenido:  <input type="number" min="0" name="idPar2Metodo2" oninput="validity.valid||(value='');"/></p>
+        <br />
+        <p>Ingrese valor para el número de lectura:  <input type="number" min="0" name="idPar3Metodo2" oninput="validity.valid||(value='');"/></p>
+        <br />
+        <p><input type = "submit" value = "Calcular" /></p>
+    </form>
     <br />
-    <br />
-    <label>Ingrese valor para el número de reviews:</label>
-    <input type="number" min="0" name="idPar2Metodo2" oninput="validity.valid||(value='');"/>
-    <br />
-    <br />
-    <label>Ingrese valor para el número de lectura:</label>
-    <input type="number" min="0" name="idPar3Metodo2" oninput="validity.valid||(value='');"/>
-    <br />
-    <br />
-    <input type="button" value="Calcular"/>
-    <br />
-    <br />
-    <label>Valor de la predicción:</label>
-    <input type="text" id="ResultadoModelo2" readonly>
+    <label>Valor de la predicción de la cantidad de suscriptores:</label>
+    <input type="text" id="ResultadoModelo2" readonly value={{ resultado2 }}>
 </body>
 </html>
