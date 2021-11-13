@@ -5,7 +5,36 @@
     <title>Proyecto CDA Grupo 10</title>
 </head>
 <body>
-    <h1> holaaaaaaaa {{ nombre }}</h1>
-    <th>'Hello People' </th>
+    <h1> Fidelización Cursos Udemy </h1>
+    <br />
+    <hr>
+    <p align="left">Modelo 1: Predicción numero de reviews a partir de número de suscriptores</p>
+    <label>Ingrese valor para el número de suscriptores:</label>
+    <input type="number" min="0" name="idParMetodo1" oninput="validity.valid||(value='');"/>
+    <button type="button" onclick="window.location.href='{{ url_for( 'CalcularModelo1') }}';">Calcular</button>
+
+    <br />
+    <br />
+    <label>Valor de la predicción:</label>
+    <input type="text" id="ResultadoModelo1" readonly value={{ nombre }}>
+    <hr>
+    <p align="left">Modelo 2: Predicción número de suscriptores a partir de las siguientes variables</p>
+    <label>Ingrese valor del precio:</label>
+    <input type="number" min="0" name="idPar1Metodo2" oninput="validity.valid||(value='');"/>
+    <br />
+    <br />
+    <label>Ingrese valor para el número de reviews:</label>
+    <input type="number" min="0" name="idPar2Metodo2" oninput="validity.valid||(value='');"/>
+    <br />
+    <br />
+    <label>Ingrese valor para el número de lectura:</label>
+    <input type="number" min="0" name="idPar3Metodo2" oninput="validity.valid||(value='');"/>
+    <br />
+    <br />
+    <input type="button" value="Calcular"/>
+    <br />
+    <br />
+    <label>Valor de la predicción:</label>
+    <input type="text" id="ResultadoModelo2" readonly>
 </body>
 </html>
